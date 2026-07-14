@@ -76,6 +76,7 @@ export class Login {
     cy.get(stageLoginPO.username).type(username);
     cy.get(stageLoginPO.password).type(password, { log: false });
     cy.get(stageLoginPO.loginButton).click();
+    cy.get(stageLoginPO.approveButton).should('be.visible').click();
     cy.contains(stageLoginPO.grantAccessClass, stageLoginPO.grantAccessText).click();
 
     // ----- Workaround -----

@@ -3,6 +3,7 @@ export const stageLoginPO = {
   password: '#password',
   loginButton: '#submit',
   dex: `button[type="submit"]`,
+  approveButton: 'input[name="approve"]',
   grantAccessClass: `.dex-btn-text`,
   grantAccessText: 'Grant Access',
 };
