@@ -3,6 +3,8 @@ export const stageLoginPO = {
   password: '#password',
   loginButton: '#submit',
   dex: `button[type="submit"]`,
+  grantAccessClass: `.dex-btn-text`,
+  grantAccessText: 'Grant Access',
 };
 
 export const localKonfluxLoginPO = {
