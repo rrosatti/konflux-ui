@@ -60,6 +60,7 @@ const ComponentGroupComponentsList: React.FC = () => {
               return {
                 componentName: c.name,
                 namespace,
+                component: componentsMap.get(c.name),
                 gitUrl: componentsMap.get(c.name)?.spec.source?.url,
                 imageUrl: latestCandidate?.lastPromotedImage,
                 version: version ?? latestCandidate?.version,

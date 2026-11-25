@@ -6,6 +6,7 @@ import GitRepoLink from '~/components/GitLink/GitRepoLink';
 import LatestPushBuildSection from '~/components/LatestBuild/LatestPushBuildSection';
 import { defineFilters } from '~/shared/components/Filter';
 import { ColumnDefinition } from '~/shared/components/TableV2';
+import { ComponentKind } from '~/types';
 import { textMatch } from '~/utils/text-filter-utils';
 
 export type CgComponentListItem = {
@@ -17,6 +18,7 @@ export type CgComponentListItem = {
   version?: string;
   /** Canonical version name, used to start builds. */
   versionName?: string;
+  component?: ComponentKind;
 };
 
 export const cgComponentsFilterConfig = defineFilters<CgComponentListItem>()([
@@ -100,7 +102,7 @@ export const cgComponentsTableColumns: ColumnDefinition<CgComponentListItem>[] =
     accessorFn: () => null,
     cell: (info) => (
       <ComponentActionsCell
-        componentName={info.row.original.componentName}
+        component={info.row.original.component}
         version={info.row.original.versionName}
       />
     ),
